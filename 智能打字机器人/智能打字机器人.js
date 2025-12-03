@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         智能打字机器人
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.0
 // @description  逐字打字 + UI(Shadow DOM) + 元素拾取(选中后高亮短暂显示即消失)
 // @match        *://*/*
 // @run-at       document-end
