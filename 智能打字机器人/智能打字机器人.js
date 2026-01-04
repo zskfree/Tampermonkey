@@ -3,9 +3,11 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  逐字打字 + UI(Shadow DOM) + 元素拾取(选中后高亮短暂显示即消失)
+// @author       zskfree
 // @match        *://*/*
 // @run-at       document-end
 // @grant        GM_addStyle
+// @license      MIT
 // ==/UserScript==
 
 (function () {
