@@ -81,14 +81,14 @@
         <div class="tag">待输入文本（可粘贴/拖拽文件/导入）：</div>
         <div id="input" contenteditable="true" spellcheck="false"></div>
         <div class="row">
-          <button class="btn half" id="pick">🎯 进入拾取模式</button>
+          <button class="btn half" id="pick">🎯 选择输入框</button>
           <button class="btn half" id="focus">📍 定位并点击目标</button>
         </div>
         <div class="row">
           <button class="btn half" id="import">📥 导入文本</button>
           <button class="btn half" id="clear">🧹 清空</button>
         </div>
-        <div id="status">提示：点击“进入拾取模式”，用鼠标点页面上的输入框。</div>
+        <div id="status">提示：点击“选择输入框”，用鼠标点页面上的输入框。</div>
         <div id="bar"><div id="fill"></div></div>
         <div id="speed">
           <label>打字速度：<span id="sv">普通</span></label>
@@ -164,7 +164,7 @@
         // 拾取器
         setupPicker();
 
-        updateUI('点击“进入拾取模式”，鼠标点目标输入框进行记录。', 0);
+        updateUI('点击“选择输入框”，鼠标点目标输入框进行记录。', 0);
     }
 
     // 在 contenteditable 中插入文本
@@ -247,7 +247,7 @@
             hoverBox.style.display = 'none';
             updateUI('拾取中：把鼠标移到目标输入框上，然后点击它。按 Esc 退出。', 0);
         } else {
-            ui.els.pick.textContent = '🎯 进入拾取模式';
+            ui.els.pick.textContent = '🎯 选择输入框';
             hoverBox.style.display = 'none';
             updateUI('拾取结束。', 0);
         }
@@ -278,7 +278,7 @@
         // 退出拾取，但先闪一下
         flashHighlight(targetElement, 600);
         pickMode = false;
-        ui.els.pick.textContent = '🎯 进入拾取模式';
+        ui.els.pick.textContent = '🎯 选择输入框';
         updateUI('✅ 已记录目标输入框', 0);
         e.preventDefault(); e.stopPropagation();
     }
@@ -329,7 +329,7 @@
     }
 
     function startTyping() {
-        if (!targetElement) { updateUI('⚠️ 请先进入拾取模式选择目标输入框', 0); return; }
+        if (!targetElement) { updateUI('⚠️ 请先选择目标输入框', 0); return; }
         targetElement.focus();
 
         const text = (ui.els.input?.textContent || '').toString();
